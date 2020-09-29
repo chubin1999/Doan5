@@ -5,6 +5,7 @@ import { AfterViewInit, Component, OnInit, Renderer2 } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent implements OnInit, AfterViewInit {
   constructor(private renderer: Renderer2) { }
   ngOnInit(): void {
