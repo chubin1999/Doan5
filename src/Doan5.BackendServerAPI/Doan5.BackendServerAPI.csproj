@@ -5,8 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Data\Entities\" />
-    <Folder Include="Data\IDateTracking\" />
+    <Folder Include="Data\Interfaces\" />
   </ItemGroup>
 
 
