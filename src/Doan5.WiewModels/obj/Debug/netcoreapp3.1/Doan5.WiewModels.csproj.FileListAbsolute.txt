@@ -1,0 +1,9 @@
+D:\codeangular\Doan5\src\Doan5.WiewModels\bin\Debug\netcoreapp3.1\Doan5.WiewModels.deps.json
+D:\codeangular\Doan5\src\Doan5.WiewModels\bin\Debug\netcoreapp3.1\Doan5.WiewModels.dll
+D:\codeangular\Doan5\src\Doan5.WiewModels\bin\Debug\netcoreapp3.1\Doan5.WiewModels.pdb
+D:\codeangular\Doan5\src\Doan5.WiewModels\obj\Debug\netcoreapp3.1\Doan5.WiewModels.csprojAssemblyReference.cache
+D:\codeangular\Doan5\src\Doan5.WiewModels\obj\Debug\netcoreapp3.1\Doan5.WiewModels.AssemblyInfoInputs.cache
+D:\codeangular\Doan5\src\Doan5.WiewModels\obj\Debug\netcoreapp3.1\Doan5.WiewModels.AssemblyInfo.cs
+D:\codeangular\Doan5\src\Doan5.WiewModels\obj\Debug\netcoreapp3.1\Doan5.WiewModels.csproj.CoreCompileInputs.cache
+D:\codeangular\Doan5\src\Doan5.WiewModels\obj\Debug\netcoreapp3.1\Doan5.WiewModels.dll
+D:\codeangular\Doan5\src\Doan5.WiewModels\obj\Debug\netcoreapp3.1\Doan5.WiewModels.pdb
