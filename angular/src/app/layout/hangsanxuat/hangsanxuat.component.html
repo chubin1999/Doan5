@@ -1,0 +1,390 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="' Hãng sản xuất '" [icon]="'fa-table'"></app-page-header>
+    <div class="row">
+        <div class="col col-xl-12 col-lg-12">
+            <!-- <div class="card mb-3">
+                <div class="card-header">
+                    Basic example
+                </div>
+                <div class="card-body table-responsive">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Username</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header">Table head options</div>
+                <div class="card-body table-responsive">
+                    <table class="table">
+                        <thead class="thead-inverse">
+                        <tr>
+                            <th>#</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Username</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <table class="table">
+                        <thead class="thead-default">
+                        <tr>
+                            <th>#</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Username</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div> -->
+            <!-- <div class="card mb-3"> -->
+            <!-- <div class="card-header">Bordered table</div> -->
+            <!-- Button to Open the Modal -->
+            <div class="card-body table-responsive">
+
+
+                <!-- Thêm hãng sản xuất -->
+                <button style="float: right;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                    <i style="margin: auto;" class="fa fa-plus-square-o" aria-hidden="true"></i>
+                </button>
+                  <!-- The Modal -->
+                  <div class="modal" id="myModal">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                  
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                          <h4 class="modal-title">Thêm hãng sản xuất</h4>
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <form #hangForm="ngForm" (ngSubmit)="onClick(hangForm.value)">
+                                <div class="form-group">
+                                  <label for="email">Nhập mã hãng:</label>
+                                  <input type="text" class="form-control" placeholder="" name="mahang" id="email" ngModel>
+                                </div>
+                                <div class="form-group">
+                                  <label for="pwd">Nhập tên hãng: </label>
+                                  <input type="text" class="form-control" placeholder="" name="tenhang" id="pwd" ngModel>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pwd">Mô tả: </label>
+                                    <input type="text" class="form-control" placeholder="" name="mota" id="pwd" ngModel>
+                                  </div>
+                                  <button style="margin-left: 200px;" type="submit" class="btn btn-primary">Submit</button>
+                              </form>
+                        </div>
+                        
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                  
+                      </div>
+                    </div>
+                </div>
+                <!-- End thêm -->
+
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <!-- <th>#</th> -->
+                            <th>Mã hãng</th>
+                            <th>Tên hãng</th>
+                            <th>Mô tả</th>
+                            <th>Chức năng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <tr *ngFor="let item of items;index as i"> -->
+                        <tr *ngFor="let item of items;index as i">
+                            <!-- <td>{{i}}</td> -->
+                            <th scope="row">{{item.mahang}}</th>
+                            <td>{{item.tenhang}}</td>
+                            <td>{{item.mota}}</td>
+                            <td >
+                                <i class="fa fa-pencil-square-o text-success text-active"></i>
+                                <br>
+                                <i class="fa fa-times text-danger text"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- </div> -->
+            <!-- <div class="card mb-3">
+                <div class="card-header">Small table</div>
+                <table class="table table-sm">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Username</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div> -->
+        </div>
+        <!-- <div class="col col-xl-6 col-lg-12">
+            <div class="card mb-3">
+                <div class="card-header">Inverse table</div>
+                <div class="card-body table-responsive">
+                    <table class="table table-inverse">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Username</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header">Striped Rows</div>
+                <div class="card-body table-responsive">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                        <tr>
+                            <th>Page</th>
+                            <th>Visits</th>
+                            <th>% New Visits</th>
+                            <th>Revenue</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>/index.html</td>
+                            <td>1265</td>
+                            <td>32.3%</td>
+                            <td>$321.33</td>
+                        </tr>
+                        <tr>
+                            <td>/about.html</td>
+                            <td>261</td>
+                            <td>33.3%</td>
+                            <td>$234.12</td>
+                        </tr>
+                        <tr>
+                            <td>/sales.html</td>
+                            <td>665</td>
+                            <td>21.3%</td>
+                            <td>$16.34</td>
+                        </tr>
+                        <tr>
+                            <td>/blog.html</td>
+                            <td>9516</td>
+                            <td>89.3%</td>
+                            <td>$1644.43</td>
+                        </tr>
+                        <tr>
+                            <td>/404.html</td>
+                            <td>23</td>
+                            <td>34.3%</td>
+                            <td>$23.52</td>
+                        </tr>
+                        <tr>
+                            <td>/services.html</td>
+                            <td>421</td>
+                            <td>60.3%</td>
+                            <td>$724.32</td>
+                        </tr>
+                        <tr>
+                            <td>/blog/post.html</td>
+                            <td>1233</td>
+                            <td>93.2%</td>
+                            <td>$126.34</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header">Hoverable rows</div>
+                <table class="card-body table table-hover">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Username</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header">Contextual classes</div>
+                <table class="card-body table">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Username</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="table-active">
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr class="table-success">
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr class="table-info">
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                    </tr>
+                    <tr class="table-warning">
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                    </tr>
+                    <tr class="table-danger">
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div> -->
+    </div>
+</div>

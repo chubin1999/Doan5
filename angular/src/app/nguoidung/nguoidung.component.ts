@@ -12,12 +12,12 @@ export class NguoidungComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
   }
   ngAfterViewInit() { 
-    setTimeout(() => {
-      this.loadScripts();
-    });
+    // setTimeout(() => {
+    //   this.loadScripts();
+    // });
   }
   public loadScripts() {
-    this.renderExternalScript('assets/nguoidung/js/vendor/modernizr-2.8.3.min.js').onload = () => {
+    this.renderExternalScript('assets/nguoidung/js/main.js').onload = () => {
     }
   }
   public renderExternalScript(src: string): HTMLScriptElement {

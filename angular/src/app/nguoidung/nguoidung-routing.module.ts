@@ -16,6 +16,9 @@ const routes: Routes = [
             { path: 'danhsachsanpham', loadChildren: () => import('./danhsachsanpham/danhsachsanpham.module').then(m => m.DanhsachsanphamModule) },
             { path: 'giohang', loadChildren: () => import('./giohang/giohang.module').then(m => m.GiohangModule) },
             { path: 'lienhe', loadChildren: () => import('./lienhe/lienhe.module').then(m => m.LienheModule) },
+            { path: 'hoidap', loadChildren: () => import('./hoidap/hoidap.module').then(m => m.HoidapModule) },
+            { path: 'taikhoan', loadChildren: () => import('./taikhoan/taikhoan.module').then(m => m.TaikhoanModule) },
+            { path: 'loginnguoidung', loadChildren: () => import('../loginnguoidung/loginnguoidung.module').then(m => m.LoginnguoidungModule) },
         ]
 
     }

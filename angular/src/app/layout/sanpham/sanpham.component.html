@@ -1,0 +1,52 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="' Sản phẩm'" [icon]="'fa-table'"></app-page-header>
+    <div class="row">
+        <div class="col col-xl-12 col-lg-12">
+            <div class="card-body table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <!-- <th>#</th> -->
+                            <th>Mã sán phẩm</th>
+                            <th>Mã loại</th>
+                            <th>Mã hãng</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Đơn giá</th>
+                            <th>Ngày cập nhật</th>
+                            <th>Số lượng</th>
+                            <th>Hạn sử dụng</th>
+                            <th>Mô tả</th>
+                            <th>Hình ảnh</th>
+                            <th>Trọng lượng</th>
+                            <th>Xuất xứ</th>
+                            <th>Chức năng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <tr *ngFor="let item of items;index as i"> -->
+                        <tr *ngFor="let item of items;index as i">
+                            <!-- <td>{{i}}</td> -->
+                            <th scope="row">{{item.masanpham}}</th>
+                            <td>{{item.maloai}}</td>
+                            <td>{{item.mahang}}</td>
+                            <td>{{item.tensanpham}}</td>
+                            <td>{{item.dongia}}</td>
+                            <td>{{item.ngaycapnhat}}</td>
+                            <td>{{item.soluong}}</td>
+                            <td>{{item.hansudung}}</td>
+                            <td>{{item.mota}}</td>
+                            <td>{{item.hinhanh}}</td>
+                            <td>{{item.trongluong}}</td>
+                            <td>{{item.xuatxu}}</td>
+                            <td >
+                                <i class="fa fa-pencil-square-o text-success text-active"></i>
+                                <br>
+                                <i class="fa fa-times text-danger text"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    </div>
+    
+</div>
