@@ -7,7 +7,7 @@ import { PageHeaderModule } from '../../shared';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-    imports: [CommonModule, HangsanxuatRoutingModule, PageHeaderModule,FormsModule],
+    imports: [CommonModule, HangsanxuatRoutingModule, PageHeaderModule, FormsModule],
     declarations: [HangsanxuatComponent]
 })
 export class HangsanxuatModule {}

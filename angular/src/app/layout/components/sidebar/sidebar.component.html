@@ -16,6 +16,14 @@
             <i class="fa fa-fw fa-table"></i>&nbsp;
             <span>{{ 'Quản lý sản phẩm' | translate }}</span>
         </a>
+        <a [routerLink]="['/admin/loaisanpham']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-table"></i>&nbsp;
+            <span>{{ 'Quản lý loại sản phẩm' | translate }}</span>
+        </a>
+        <a [routerLink]="['/admin/danhmucsanpham']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-table"></i>&nbsp;
+            <span>{{ 'Quản lý danh mục sản phẩm' | translate }}</span>
+        </a>
         <a [routerLink]="['/admin/forms']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-edit"></i>&nbsp;
             <span>{{ 'Forms' | translate }}</span>

@@ -139,13 +139,13 @@
                                     <label for="pwd">Mô tả: </label>
                                     <input type="text" class="form-control" placeholder="" name="mota" id="pwd" ngModel>
                                   </div>
-                                  <button style="margin-left: 200px;" type="submit" class="btn btn-primary">Submit</button>
+                                  <button style="margin-left: 200px;" type="submit" class="btn btn-primary">Thêm</button>
                               </form>
                         </div>
                         
                         <!-- Modal footer -->
                         <div class="modal-footer">
-                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
                         </div>
                   
                       </div>
@@ -171,9 +171,9 @@
                             <td>{{item.tenhang}}</td>
                             <td>{{item.mota}}</td>
                             <td >
-                                <i class="fa fa-pencil-square-o text-success text-active"></i>
+                                <i style="cursor: pointer;" class="fa fa-pencil-square-o text-success text-active"></i>
                                 <br>
-                                <i class="fa fa-times text-danger text"></i>
+                                <i style="cursor: pointer;" (click)="onDelete(item.mahang)" class="fa fa-times text-danger text"></i>
                             </td>
                         </tr>
                     </tbody>

@@ -6,14 +6,14 @@ import {map} from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class SanphamService {
+export class DanhmucsanphamService {
 
   //b1: khai báo biến chỉ đường dẫn api
-  public urlAPI = "https://localhost:44352/api/Sanphams";
+  public urlAPI = "https://localhost:44352/api/Danhmucsanphams";
   //b2: khởi tạo một biến httpclient
   constructor(private _http: HttpClient) { }
   //b3: viết hàm gọi phương thức
-  getLink():Observable<any[]>{
+  getLink(): Observable<any[]>{
     return this._http.get<any[]>(this.urlAPI).pipe(map(res => {
         return res;
     }));
@@ -25,5 +25,10 @@ export class SanphamService {
       return res;
     }));
   }
-  
+  deleteItem(id:string):Observable<any>{
+    debugger;
+    return this._http.delete<any>(this.urlAPI + "/" + id).pipe(map(res=>{
+      return res;
+    }));
+  }
 }

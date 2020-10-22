@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../router.animations';
 import { SanphamService } from '../../shared/services/sanpham.service';
+import {NgForm} from '@angular/forms';
 
 @Component({
     selector: 'app-sanpham',
@@ -10,12 +11,18 @@ import { SanphamService } from '../../shared/services/sanpham.service';
 })
 export class SanphamComponent implements OnInit {
     public items: any[];
-    constructor(private hangsanxuatService: SanphamService) {}
+    constructor (private sanphamService: SanphamService) {}
 
     ngOnInit() {
-        this.hangsanxuatService.getLink().subscribe((res: any) => {
+        this.sanphamService.getLink().subscribe((res: any) => {
             //đẩy dữ liệu lấy được từ items
             this.items = res;
+        });
+    }
+    onClick(value){
+        
+        this.sanphamService.postItem(value).subscribe((res)=>{
+            alert("Thêm thành công");
         });
     }
 }

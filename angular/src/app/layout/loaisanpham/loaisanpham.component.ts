@@ -1,27 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { HangsanxuatService } from '../../shared/services/hangsanxuat.service';
+import { LoaisanphamService } from '../../shared/services/loaisanpham.service';
 import { routerTransition } from '../../router.animations';
-import {NgForm} from '@angular/forms';
 
 @Component({
-    selector: 'app-hangsanxuat',
-    templateUrl: './hangsanxuat.component.html',
-    styleUrls: ['./hangsanxuat.component.scss'],
-    animations: [routerTransition()]
+  selector: 'app-loaisanpham',
+  templateUrl: './loaisanpham.component.html',
+  styleUrls: ['./loaisanpham.component.css'],
+  animations: [routerTransition()]
 })
-export class HangsanxuatComponent implements OnInit {
+export class LoaisanphamComponent implements OnInit {
 
-    public items: any[];
-    constructor(private hangsanxuatService: HangsanxuatService) {}
+  public items: any[];
+    constructor(private loaisanphamService: LoaisanphamService) {}
 
     ngOnInit() {
-        this.hangsanxuatService.getLink().subscribe((res: any)=>{
+        this.loaisanphamService.getLink().subscribe((res: any)=>{
             //đẩy dữ liệu lấy được từ items
             this.items = res;
         });
     }
     onClick(value:any){
-        this.hangsanxuatService.postItem(value).subscribe((res)=>{
+        this.loaisanphamService.postItem(value).subscribe((res)=>{
             alert("Thêm thành công");
         });
     }
@@ -29,7 +28,7 @@ export class HangsanxuatComponent implements OnInit {
     onDelete(id:string){
         var confirmResult = confirm("Bạn có chắc chắn muốn xóa không?");
         if (confirmResult) {
-            this.hangsanxuatService.deleteItem(id).subscribe(function (response) {
+            this.loaisanphamService.deleteItem(id).subscribe(function (response) {
                 if (response) {
                     alert('Xóa thành công!');
                    
