@@ -19,8 +19,7 @@ export class SanphamComponent implements OnInit {
             this.items = res;
         });
     }
-    onClick(value){
-        
+    onClick(value){        
         this.sanphamService.postItem(value).subscribe((res)=>{
             alert("Thêm thành công");
         });
