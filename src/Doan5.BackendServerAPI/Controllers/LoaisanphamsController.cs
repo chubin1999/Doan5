@@ -11,44 +11,44 @@ namespace Doan5.BackendServerAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class HangsanxuatsController : ControllerBase
+    public class LoaisanphamsController : ControllerBase
     {
         private readonly Doan5Context _context;
 
-        public HangsanxuatsController(Doan5Context context)
+        public LoaisanphamsController(Doan5Context context)
         {
             _context = context;
         }
 
-        // GET: api/Hangsanxuats
+        // GET: api/Loaisanphams
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Hangsanxuat>>> GetHangsanxuat()
+        public async Task<ActionResult<IEnumerable<Loaisanpham>>> GetLoaisanpham()
         {
-            return await _context.Hangsanxuat.ToListAsync();
+            return await _context.Loaisanpham.ToListAsync();
         }
 
-        // GET: api/Hangsanxuats/5
+        // GET: api/Loaisanphams/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Hangsanxuat>> GetHangsanxuat(string id)
+        public async Task<ActionResult<Loaisanpham>> GetLoaisanpham(string id)
         {
-            var hangsanxuat = await _context.Hangsanxuat.FindAsync(id);
+            var loaisanpham = await _context.Loaisanpham.FindAsync(id);
 
-            if (hangsanxuat == null)
+            if (loaisanpham == null)
             {
                 return NotFound();
             }
 
-            return hangsanxuat;
+            return loaisanpham;
         }
 
-        // PUT: api/Hangsanxuats/5
+        // PUT: api/Loaisanphams/5
         
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutHangsanxuat(string id, Hangsanxuat hangsanxuat)
+        public async Task<IActionResult> PutLoaisanpham(string id, Loaisanpham loaisanpham)
         {
             
 
-            _context.Entry(hangsanxuat).State = EntityState.Modified;
+            _context.Entry(loaisanpham).State = EntityState.Modified;
 
             try
             {
@@ -56,7 +56,7 @@ namespace Doan5.BackendServerAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!HangsanxuatExists(id))
+                if (!LoaisanphamExists(id))
                 {
                     return NotFound();
                 }
@@ -69,19 +69,19 @@ namespace Doan5.BackendServerAPI.Controllers
             return NoContent();
         }
 
-        // POST: api/Hangsanxuats
+        // POST: api/Loaisanphams
         
         [HttpPost]
-        public async Task<ActionResult<Hangsanxuat>> PostHangsanxuat(Hangsanxuat hangsanxuat)
+        public async Task<ActionResult<Loaisanpham>> PostLoaisanpham(Loaisanpham loaisanpham)
         {
-            _context.Hangsanxuat.Add(hangsanxuat);
+            _context.Loaisanpham.Add(loaisanpham);
             try
             {
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateException)
             {
-                if (HangsanxuatExists(hangsanxuat.Mahang))
+                if (LoaisanphamExists(loaisanpham.Maloai))
                 {
                     return Conflict();
                 }
@@ -91,28 +91,28 @@ namespace Doan5.BackendServerAPI.Controllers
                 }
             }
 
-            return CreatedAtAction("GetHangsanxuat", new { id = hangsanxuat.Mahang }, hangsanxuat);
+            return CreatedAtAction("GetLoaisanpham", new { id = loaisanpham.Maloai }, loaisanpham);
         }
 
-        // DELETE: api/Hangsanxuats/5
+        // DELETE: api/Loaisanphams/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Hangsanxuat>> DeleteHangsanxuat(string id)
+        public async Task<ActionResult<Loaisanpham>> DeleteLoaisanpham(string id)
         {
-            var hangsanxuat = await _context.Hangsanxuat.FindAsync(id);
-            if (hangsanxuat == null)
+            var loaisanpham = await _context.Loaisanpham.FindAsync(id);
+            if (loaisanpham == null)
             {
                 return NotFound();
             }
 
-            _context.Hangsanxuat.Remove(hangsanxuat);
+            _context.Loaisanpham.Remove(loaisanpham);
             await _context.SaveChangesAsync();
 
-            return hangsanxuat;
+            return loaisanpham;
         }
 
-        private bool HangsanxuatExists(string id)
+        private bool LoaisanphamExists(string id)
         {
-            return _context.Hangsanxuat.Any(e => e.Mahang == id);
+            return _context.Loaisanpham.Any(e => e.Maloai == id);
         }
     }
 }

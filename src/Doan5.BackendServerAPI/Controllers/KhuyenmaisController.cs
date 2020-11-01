@@ -11,44 +11,44 @@ namespace Doan5.BackendServerAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class HangsanxuatsController : ControllerBase
+    public class KhuyenmaisController : ControllerBase
     {
         private readonly Doan5Context _context;
 
-        public HangsanxuatsController(Doan5Context context)
+        public KhuyenmaisController(Doan5Context context)
         {
             _context = context;
         }
 
-        // GET: api/Hangsanxuats
+        // GET: api/Khuyenmais
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Hangsanxuat>>> GetHangsanxuat()
+        public async Task<ActionResult<IEnumerable<Khuyenmai>>> GetKhuyenmai()
         {
-            return await _context.Hangsanxuat.ToListAsync();
+            return await _context.Khuyenmai.ToListAsync();
         }
 
-        // GET: api/Hangsanxuats/5
+        // GET: api/Khuyenmais/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Hangsanxuat>> GetHangsanxuat(string id)
+        public async Task<ActionResult<Khuyenmai>> GetKhuyenmai(string id)
         {
-            var hangsanxuat = await _context.Hangsanxuat.FindAsync(id);
+            var khuyenmai = await _context.Khuyenmai.FindAsync(id);
 
-            if (hangsanxuat == null)
+            if (khuyenmai == null)
             {
                 return NotFound();
             }
 
-            return hangsanxuat;
+            return khuyenmai;
         }
 
-        // PUT: api/Hangsanxuats/5
+        // PUT: api/Khuyenmais/5
         
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutHangsanxuat(string id, Hangsanxuat hangsanxuat)
+        public async Task<IActionResult> PutKhuyenmai(string id, Khuyenmai khuyenmai)
         {
             
 
-            _context.Entry(hangsanxuat).State = EntityState.Modified;
+            _context.Entry(khuyenmai).State = EntityState.Modified;
 
             try
             {
@@ -56,7 +56,7 @@ namespace Doan5.BackendServerAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!HangsanxuatExists(id))
+                if (!KhuyenmaiExists(id))
                 {
                     return NotFound();
                 }
@@ -69,19 +69,19 @@ namespace Doan5.BackendServerAPI.Controllers
             return NoContent();
         }
 
-        // POST: api/Hangsanxuats
+        // POST: api/Khuyenmais
         
         [HttpPost]
-        public async Task<ActionResult<Hangsanxuat>> PostHangsanxuat(Hangsanxuat hangsanxuat)
+        public async Task<ActionResult<Khuyenmai>> PostKhuyenmai(Khuyenmai khuyenmai)
         {
-            _context.Hangsanxuat.Add(hangsanxuat);
+            _context.Khuyenmai.Add(khuyenmai);
             try
             {
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateException)
             {
-                if (HangsanxuatExists(hangsanxuat.Mahang))
+                if (KhuyenmaiExists(khuyenmai.Makhuyenmai))
                 {
                     return Conflict();
                 }
@@ -91,28 +91,28 @@ namespace Doan5.BackendServerAPI.Controllers
                 }
             }
 
-            return CreatedAtAction("GetHangsanxuat", new { id = hangsanxuat.Mahang }, hangsanxuat);
+            return CreatedAtAction("GetKhuyenmai", new { id = khuyenmai.Makhuyenmai }, khuyenmai);
         }
 
-        // DELETE: api/Hangsanxuats/5
+        // DELETE: api/Khuyenmais/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Hangsanxuat>> DeleteHangsanxuat(string id)
+        public async Task<ActionResult<Khuyenmai>> DeleteKhuyenmai(string id)
         {
-            var hangsanxuat = await _context.Hangsanxuat.FindAsync(id);
-            if (hangsanxuat == null)
+            var khuyenmai = await _context.Khuyenmai.FindAsync(id);
+            if (khuyenmai == null)
             {
                 return NotFound();
             }
 
-            _context.Hangsanxuat.Remove(hangsanxuat);
+            _context.Khuyenmai.Remove(khuyenmai);
             await _context.SaveChangesAsync();
 
-            return hangsanxuat;
+            return khuyenmai;
         }
 
-        private bool HangsanxuatExists(string id)
+        private bool KhuyenmaiExists(string id)
         {
-            return _context.Hangsanxuat.Any(e => e.Mahang == id);
+            return _context.Khuyenmai.Any(e => e.Makhuyenmai == id);
         }
     }
 }

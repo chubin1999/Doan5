@@ -9,7 +9,7 @@ import {map} from 'rxjs/operators';
 export class LoaisanphamService {
 
   //b1: khai báo biến chỉ đường dẫn api
-  public urlAPI = "https://localhost:44352/api/Loaisanphams";
+  public urlAPI = "https://localhost:44350/api/Loaisanphams";
   //b2: khởi tạo một biến httpclient
   constructor(private _http: HttpClient) { }
   //b3: viết hàm gọi phương thức

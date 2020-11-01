@@ -25,6 +25,7 @@
       "Doan5.BackendServerAPI/1.0.0": {
         "dependencies": {
           "Doan5.WiewModels": "1.0.0",
+          "Microsoft.EntityFrameworkCore.Design": "3.1.9",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.9",
           "Microsoft.EntityFrameworkCore.Sqlite": "3.1.9",
           "Microsoft.EntityFrameworkCore.Tools": "3.1.9",
