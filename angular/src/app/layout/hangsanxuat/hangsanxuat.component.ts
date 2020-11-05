@@ -29,21 +29,21 @@ export class HangsanxuatComponent implements OnInit {
         //hien thi modal
         this.AddEditModal.show();
     }
-    //hien thi form AddEditModal voi du lieu
+    //hien thi form AddEditModal co du lieu
     showEdit(id: string) {
         this.AddEditModal.show();
         this.Id = 1;
        this.getSingled(id);
 
     }
-    //hien thi theo ma
+    //hien thi du lieu theo ma
     getSingled(id: string){
         this.hangsanxuatService.getItem(id).subscribe(res=>{
             this.entity = res;
         });
     }
     
-    //hien thi du lieu 
+    //load lại trang, hien thi du lieu 
     loadData() {
         this.hangsanxuatService.getLink().subscribe((res: any) => {
             //đẩy dữ liệu lấy được từ items
@@ -74,7 +74,6 @@ export class HangsanxuatComponent implements OnInit {
         }
     }
     //su kien xoa
-    // public style="30px";
     onDelete(id: string) {
         var confirmResult = confirm("Bạn có chắc chắn muốn xóa không?");
         if (confirmResult) {
