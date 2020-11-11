@@ -1,1 +1,129 @@
-<p>dondathang works!</p>
+<div [@routerTransition]>
+    <app-page-header [heading]="' Đơn đặt hàng '" [icon]="'fa-table'"></app-page-header>
+    <div class="row">
+        <div class="col col-xl-12 col-lg-12">
+            <!-- Button to Open the Modal -->
+            <div class="card-body table-responsive">
+
+
+                <!-- Thêm hãng sản xuất -->
+                <button style="float: right;" type="button" class="btn btn-primary" (click)="showAdd()">
+                  <i style="margin: auto;" class="fa fa-plus-square-o" aria-hidden="true"></i>
+                </button>
+
+                <div bsModal #AddEditModal="bs-modal" class="modal fade" tabindex="-1" role="dialog"
+                aria-labelledby="dialog-sizes-name1" *ngIf="entity">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 id="dialog-sizes-name1" class="modal-title pull-left">Add and Edit Modal</h4>
+                            <button type="button" class="close pull-right" (click)="AddEditModal.hide()"
+                                aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form #loaiForm="ngForm" (ngSubmit)="onClick(loaiForm.value)">
+                                <div class="form-group">
+                                    <label for="email">Nhập mã đơn đặt hàng:</label>
+                                    <input type="hidden" name="id"  [(ngModel)]="Id">
+                                    <input type="text" class="form-control" placeholder="" #madondathang="ngModel" name="madondathang" 
+                                        [(ngModel)]="entity.madondathang">
+                                </div>
+                                <div class="form-group">
+                                  <label for="pwd">Mã khách hàng: </label>
+                                  <input type="text" class="form-control" placeholder="" name="makhachhang" #makhachhang="ngModel"
+                                      [(ngModel)]="entity.makhachhang">
+                               </div>
+                                <div class="form-group">
+                                    <label for="pwd">Mã nhân viên: </label>
+                                    <input type="text" class="form-control" placeholder="" name="manhanvien" #manhanvien="ngModel"
+                                        [(ngModel)]="entity.manhanvien">
+                                </div>
+                                <div class="form-group">
+                                    <label for="pwd">Ngày đặt: </label>
+                                    <input type="datetime-local" class="form-control" placeholder="" name="ngaydat" #ngaydat="ngModel"
+                                        [(ngModel)]="entity.ngaydat">
+                                </div>
+                                <div class="form-group">
+                                    <label for="pwd">Tên khách hàng: </label>
+                                    <input type="text" class="form-control" placeholder="" name="tenkhachhang" #tenkhachhang="ngModel"
+                                        [(ngModel)]="entity.tenkhachhang">
+                                </div>
+                                <div class="form-group">
+                                    <label for="pwd">Trạng thái: </label>
+                                    <input type="text" class="form-control" placeholder="" name="trangthai" #trangthai="ngModel"
+                                        [(ngModel)]="entity.trangthai">
+                                </div>
+                                <div class="form-group">
+                                    <label for="pwd">Địa chỉ nhận hàng: </label>
+                                    <input type="text" class="form-control" placeholder="" name="diachinhanhang" #diachinhanhang="ngModel"
+                                        [(ngModel)]="entity.diachinhanhang">
+                                </div>
+                                <div class="form-group">
+                                    <label for="pwd">Số điện thoại: </label>
+                                    <input type="number" class="form-control" placeholder="" name="sodienthoai" #sodienthoai="ngModel"
+                                        [(ngModel)]="entity.sodienthoai">
+                                </div>
+                                <div class="form-group">
+                                    <label for="pwd">Ghi chú: </label>
+                                    <input type="text" class="form-control" placeholder="" name="ghichu" #ghichu="ngModel"
+                                        [(ngModel)]="entity.ghichu">
+                                </div>
+                                <div class="form-group">
+                                    <label for="pwd">Thành tiền </label>
+                                    <input type="number" class="form-control" placeholder="" name="thanhtien" #thanhtien="ngModel"
+                                        [(ngModel)]="entity.thanhtien">
+                                </div>
+                                <button style="margin-left: 350px;" type="submit"
+                                    class="btn btn-primary">Save</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End thêm -->
+
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <!-- <th>#</th> -->
+                            <th>Mã đơn đặt hàng</th>
+                            <th>Mã khách hàng</th>
+                            <th>Mã nhân viên</th>
+                            <th>Ngày đặt</th>
+                            <th>Tên khách hàng</th>
+                            <th>Trạng thái</th>
+                            <th>Địa chỉ nhận hàng</th>
+                            <th>Số điện thoại</th>
+                            <th>Ghi chú</th>
+                            <th>Thành tiền</th>
+                            <th>Chức năng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <tr *ngFor="let item of items;index as i"> -->
+                        <tr *ngFor="let item of items;index as i">
+                            <!-- <td>{{i}}</td> -->
+                            <th scope="row">{{item.madondathang}}</th>
+                            <td>{{item.makhachhang}}</td>
+                            <td>{{item.manhanvien}}</td>
+                            <td>{{item.ngaydat}}</td>
+                            <td>{{item.tenkhachhang}}</td>
+                            <td>{{item.trangthai}}</td>
+                            <td>{{item.diachinhanhang}}</td>
+                            <td>{{item.sodienthoai}}</td>
+                            <td>{{item.ghichu}}</td>
+                            <td>{{item.thanhtien}}</td>
+                            <td >
+                                <i style="cursor: pointer;" class="fa fa-pencil-square-o text-success text-active" (click)="showEdit(item.madondathang)"></i>
+                                <br>
+                                <i style="cursor: pointer;" (click)="onDelete(item.madondathang)" class="fa fa-times text-danger text"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

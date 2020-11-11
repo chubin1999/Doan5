@@ -1,1 +1,111 @@
-<p>nhanvien works!</p>
+<div [@routerTransition]>
+    <app-page-header [heading]="' Sản phẩm'" [icon]="'fa-table'"></app-page-header>
+    <div class="row">
+        <div class="col col-xl-12 col-lg-12">
+            <div class="card-body table-responsive">
+
+                 <!-- Form thêm, sửa sản phẩm -->
+               <button style="float: right;" type="button" class="btn btn-primary" (click)="showAdd()">
+                <i style="margin: auto;" class="fa fa-plus-square-o" aria-hidden="true"></i>
+              </button>
+            
+              <div bsModal #AddEditModal="bs-modal" class="modal fade" tabindex="-1" role="dialog"
+                    aria-labelledby="dialog-sizes-name1" *ngIf="entity">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 id="dialog-sizes-name1" class="modal-title pull-left">Add and Edit Modal</h4>
+                                <button type="button" class="close pull-right" (click)="AddEditModal.hide()"
+                                    aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form #loaiForm="ngForm" (ngSubmit)="onClick(loaiForm.value)">
+                                    <div class="form-group">
+                                        <label for="email">Nhập mã nhân viên</label>
+                                        <input type="hidden" name="id"  [(ngModel)]="Id">
+                                        <input type="text" class="form-control" placeholder="" #masanpham="ngModel" name="masanpham" 
+                                            [(ngModel)]="entity.masanpham">
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="pwd">Tên nhân viên </label>
+                                      <input type="text" class="form-control" placeholder="" name="makhuyenmai" #makhuyenmai="ngModel"
+                                          [(ngModel)]="entity.makhuyenmai">
+                                   </div>
+                                   <div class="form-group">
+                                    <label for="pwd">Ngày sinh: </label>
+                                    <input type="text" class="form-control" placeholder="" name="magiamgia" #magiamgia="ngModel"
+                                        [(ngModel)]="entity.magiamgia">
+                                     </div>
+                                     <div class="form-group">
+                                        <label for="pwd">Quê quán: </label>
+                                        <input type="text" class="form-control" placeholder="" name="soluong" #soluong="ngModel"
+                                            [(ngModel)]="entity.soluong">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pwd">Số chứng minh thư: </label>
+                                        <input type="number" class="form-control" placeholder="" name="tinhnangma" #tinhnangma="ngModel"
+                                            [(ngModel)]="entity.tinhnangma">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pwd">Số điện thoại: </label>
+                                        <input type="number" class="form-control" placeholder="" name="giakhuyenmai" #giakhuyenmai="ngModel"
+                                            [(ngModel)]="entity.giakhuyenmai">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pwd">Chức vụ: </label>
+                                        <input type="text" class="form-control" placeholder="" name="thoigianbatdau" #thoigianbatdau="ngModel"
+                                            [(ngModel)]="entity.thoigianbatdau">
+                                    </div>                             
+                                    
+                                    <button style="margin-left: 350px;" type="submit"
+                                        class="btn btn-primary">Save</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End thêm -->
+
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <!-- <th>#</th> -->
+                            <th>Mã nhân viên</th>
+                            <th>Tên nhân viên</th>
+                            <th>Ngày sinh</th>
+                            <th>Quê quán</th>
+                            <th>Số chứng minh thư</th>
+                            <th>Số điện thoại</th>
+                            <th>Chức vụ</th>
+                            <th>Chức năng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <tr *ngFor="let item of items;index as i"> -->
+                        <tr *ngFor="let item of items;index as i">
+                            <!-- <td>{{i}}</td> -->
+                            <th scope="row">{{item.manhanvien}}</th>
+                            <td>{{item.tennhanvien}}</td>
+                            <td>{{item.ngaysinh}}</td>
+                            <td>{{item.quequan}}</td>
+                            <td>{{item.sochungminhthu}}</td>
+                            <td>{{item.sodienthoai}}</td>
+                            <td>{{item.chucvu}}</td>
+                            
+                            
+                            <td >
+                                <i style="cursor: pointer;" class="fa fa-pencil-square-o text-success text-active"
+                                 (click)="showEdit(item.manhanvien)"></i>
+                                <br>
+                                <i style="cursor: pointer;" (click)="onDelete(item.manhanvien)" 
+                                class="fa fa-times text-danger text"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    </div>
+    
+</div>
