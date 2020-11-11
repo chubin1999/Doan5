@@ -4,81 +4,92 @@
         <div class="col col-xl-12 col-lg-12">
             <div class="card-body table-responsive">
 
-                 <!-- Thêm start -->
-                 <button style="float: right;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                    <i style="margin: auto;" class="fa fa-plus-square-o" aria-hidden="true"></i>
-                </button>
-                  <!-- The Modal -->
-                  <div class="modal" id="myModal">
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                  
-                        <!-- Modal Header -->
-                        <div class="modal-header">
-                          <h4 class="modal-title">Thêm sản phẩm</h4>
-                          <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
-                        <!-- Modal body -->
-                        <div class="modal-body">
-                            <form #sanphamForm="ngForm" (ngSubmit)="onClick(sanphamForm.value)">
-                                <div class="form-group">
-                                  <label for="pwd">Nhập mã sản phẩm:</label>
-                                  <input type="text" class="form-control" placeholder="" name="mahang" id="pwd" ngModel>
-                                </div>
-                                <div class="form-group">
-                                  <label for="pwd">Nhập mã loại: </label>
-                                  <input type="text" class="form-control" placeholder="" name="maloai" id="pwd" ngModel>
-                                </div>
-                                <div class="form-group">
+                 <!-- Form thêm, sửa sản phẩm -->
+               <button style="float: right;" type="button" class="btn btn-primary" (click)="showAdd()">
+                <i style="margin: auto;" class="fa fa-plus-square-o" aria-hidden="true"></i>
+              </button>
+            
+              <div bsModal #AddEditModal="bs-modal" class="modal fade" tabindex="-1" role="dialog"
+                    aria-labelledby="dialog-sizes-name1" *ngIf="entity">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 id="dialog-sizes-name1" class="modal-title pull-left">Add and Edit Modal</h4>
+                                <button type="button" class="close pull-right" (click)="AddEditModal.hide()"
+                                    aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form #loaiForm="ngForm" (ngSubmit)="onClick(loaiForm.value)">
+                                    <div class="form-group">
+                                        <label for="email">Nhập mã sản phẩm:</label>
+                                        <input type="hidden" name="id"  [(ngModel)]="Id">
+                                        <input type="text" class="form-control" placeholder="" #masanpham="ngModel" name="masanpham" 
+                                            [(ngModel)]="entity.masanpham">
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="pwd">Nhập mã loại: </label>
+                                      <input type="text" class="form-control" placeholder="" name="maloai" #maloai="ngModel"
+                                          [(ngModel)]="entity.maloai">
+                                   </div>
+                                   <div class="form-group">
                                     <label for="pwd">Nhập mã hãng: </label>
-                                    <input type="text" class="form-control" placeholder="" name="mahang" id="pwd" ngModel>
-                                </div>
-                                <div class="form-group">
-                                    <label for="pwd">Nhập tên sản phẩm: </label>
-                                    <input type="text" class="form-control" placeholder="" name="tensanpham" id="pwd" ngModel>
-                                </div>
-                                <div class="form-group">
-                                    <label for="pwd">Nhập đơn giá: </label>
-                                    <input type="text" class="form-control" placeholder="" name="dongia" id="pwd" ngModel>
-                                </div>
-                                <div class="form-group">
-                                    <label for="pwd">Ngày cập nhật: </label>
-                                    <input type="text" class="form-control" placeholder="" name="ngaycapnhat" id="pwd" ngModel>
-                                </div>
-                                <div class="form-group">
-                                    <label for="pwd">Nhập số lượng: </label>
-                                    <input type="text" class="form-control" placeholder="" name="soluong" id="pwd" ngModel>
-                                </div>
-                                <div class="form-group">
-                                    <label for="pwd">Nhập hạn sử dụng: </label>
-                                    <input type="text" class="form-control" placeholder="" name="hansudung" id="pwd" ngModel>
-                                </div>
-                                <div class="form-group">
-                                    <label for="pwd">Nhập mô tả: </label>
-                                    <input type="text" class="form-control" placeholder="" name="mota" id="pwd" ngModel>
-                                </div>
-                                <div class="form-group">
-                                    <label for="pwd">Nhập hình ảnh: </label>
-                                    <input type="text" class="form-control" placeholder="" name="hinhanh" id="pwd" ngModel>
-                                </div>
-                                <div class="form-group">
-                                    <label for="pwd">Nhập trọng lượng: </label>
-                                    <input type="text" class="form-control" placeholder="" name="trongluong" id="pwd" ngModel>
-                                </div>
-                                <div class="form-group">
-                                    <label for="pwd">Nhập xuất xứ: </label>
-                                    <input type="text" class="form-control" placeholder="" name="xuatxu" id="pwd" ngModel>
-                                </div>
-                                  <button style="margin-left: 200px;" type="submit" class="btn btn-primary">Thêm</button>
-                              </form>
+                                    <input type="text" class="form-control" placeholder="" name="mahang" #mahang="ngModel"
+                                        [(ngModel)]="entity.mahang">
+                                     </div>
+                                     <div class="form-group">
+                                        <label for="pwd">Nhập tên sản phẩm: </label>
+                                        <input type="text" class="form-control" placeholder="" name="tensanpham" #tensanpham="ngModel"
+                                            [(ngModel)]="entity.tensanpham">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pwd">Nhập đơn giá: </label>
+                                        <input type="number" class="form-control" placeholder="" name="dongia" #dongia="ngModel"
+                                            [(ngModel)]="entity.dongia">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pwd">Nhập ngày cập nhật: </label>
+                                        <input type="datetime-local" class="form-control" placeholder="" name="ngaycapnhat" #ngaycapnhat="ngModel"
+                                            [(ngModel)]="entity.ngaycapnhat">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pwd">Nhập số lượng: </label>
+                                        <input type="number" class="form-control" placeholder="" name="soluong" #soluong="ngModel"
+                                            [(ngModel)]="entity.soluong">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pwd">Nhập hạn sử dụng: </label>
+                                        <input type="text" class="form-control" placeholder="" name="hansudung" #hansudung="ngModel"
+                                            [(ngModel)]="entity.hansudung">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pwd">Mô tả: </label>
+                                        <input type="text" class="form-control" placeholder="" name="mota" #mota="ngModel"
+                                            [(ngModel)]="entity.mota">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pwd">Nhập hình ảnh: </label>
+                                        <input type="text" class="form-control" placeholder="" name="hinhanh" #hinhanh="ngModel"
+                                            [(ngModel)]="entity.hinhanh">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pwd">Nhập trọng lượng: </label>
+                                        <input type="text" class="form-control" placeholder="" name="trongluong" #trongluong="ngModel"
+                                            [(ngModel)]="entity.trongluong">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pwd">Nhập xuất xứ: </label>
+                                        <input type="text" class="form-control" placeholder="" name="xuatxu" #xuatxu="ngModel"
+                                            [(ngModel)]="entity.xuatxu">
+                                    </div>
+                                    
+                                    
+                                    <button style="margin-left: 350px;" type="submit"
+                                        class="btn btn-primary">Save</button>
+                                </form>
+                            </div>
                         </div>
-                        
-                        <!-- Modal footer -->
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
-                        </div>
-                  
-                      </div>
                     </div>
                 </div>
                 <!-- End thêm -->
@@ -87,7 +98,7 @@
                     <thead>
                         <tr>
                             <!-- <th>#</th> -->
-                            <th>Mã sán phẩm</th>
+                            <th>Mã sản phẩm</th>
                             <th>Mã loại</th>
                             <th>Mã hãng</th>
                             <th>Tên sản phẩm</th>
@@ -121,9 +132,11 @@
                             <td>{{item.trongluong}}</td>
                             <td>{{item.xuatxu}}</td>
                             <td >
-                                <i class="fa fa-pencil-square-o text-success text-active"></i>
+                                <i style="cursor: pointer;" class="fa fa-pencil-square-o text-success text-active"
+                                 (click)="showEdit(item.masanpham)"></i>
                                 <br>
-                                <i class="fa fa-times text-danger text"></i>
+                                <i style="cursor: pointer;" (click)="onDelete(item.masanpham)" 
+                                class="fa fa-times text-danger text"></i>
                             </td>
                         </tr>
                     </tbody>

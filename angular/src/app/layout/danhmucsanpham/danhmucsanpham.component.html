@@ -7,47 +7,47 @@
 
 
                 <!-- Thêm hãng sản xuất -->
-                <button style="float: right;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                    <i style="margin: auto;" class="fa fa-plus-square-o" aria-hidden="true"></i>
+                <button style="float: right;" type="button" class="btn btn-primary" (click)="showAdd()">
+                  <i style="margin: auto;" class="fa fa-plus-square-o" aria-hidden="true"></i>
                 </button>
-                  <!-- The Modal -->
-                  <div class="modal" id="myModal">
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                  
-                        <!-- Modal Header -->
+
+                <div bsModal #AddEditModal="bs-modal" class="modal fade" tabindex="-1" role="dialog"
+                aria-labelledby="dialog-sizes-name1" *ngIf="entity">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
                         <div class="modal-header">
-                          <h4 class="modal-title">Thêm danh mục</h4>
-                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 id="dialog-sizes-name1" class="modal-title pull-left">Add and Edit Modal</h4>
+                            <button type="button" class="close pull-right" (click)="AddEditModal.hide()"
+                                aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
-                        <!-- Modal body -->
                         <div class="modal-body">
-                            <form #loaisanphamForm="ngForm" (ngSubmit)="onClick(loaisanphamForm.value)">
+                            <form #loaiForm="ngForm" (ngSubmit)="onClick(loaiForm.value)">
                                 <div class="form-group">
-                                  <label for="email">Nhập mã danh mục:</label>
-                                  <input type="text" class="form-control" placeholder="" name="madanhmuc" id="email" ngModel>
+                                    <label for="email">Nhập mã danh mục:</label>
+                                    <input type="hidden" name="id"  [(ngModel)]="Id">
+                                    <input type="text" class="form-control" placeholder="" #madanhmuc="ngModel" name="madanhmuc" 
+                                        [(ngModel)]="entity.madanhmuc">
                                 </div>
                                 <div class="form-group">
-                                    <label for="email">Nhập tên danh mục:</label>
-                                    <input type="text" class="form-control" placeholder="" name="tendanhmuc" id="email" ngModel>
-                                  </div>
+                                  <label for="pwd">Nhập tên danh mục: </label>
+                                  <input type="text" class="form-control" placeholder="" name="tendanhmuc" #tendanhmuc="ngModel"
+                                      [(ngModel)]="entity.tendanhmuc">
+                               </div>
                                 <div class="form-group">
                                     <label for="pwd">Mô tả: </label>
-                                    <input type="text" class="form-control" placeholder="" name="mota" id="pwd" ngModel>
-                                  </div>
-                                  <button style="margin-left: 200px;" type="submit" class="btn btn-primary">Thêm</button>
-                              </form>
+                                    <input type="text" class="form-control" placeholder="" name="mota" #mota="ngModel"
+                                        [(ngModel)]="entity.mota">
+                                </div>
+                                <button style="margin-left: 350px;" type="submit"
+                                    class="btn btn-primary">Save</button>
+                            </form>
                         </div>
-                        
-                        <!-- Modal footer -->
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
-                        </div>
-                  
-                      </div>
                     </div>
                 </div>
-                <!-- End thêm -->
+            </div>
+            <!-- End thêm -->
 
                 <table class="table table-bordered">
                     <thead>
@@ -67,7 +67,7 @@
                             <td>{{item.tendanhmuc}}</td>
                             <td>{{item.mota}}</td>
                             <td >
-                                <i style="cursor: pointer;" class="fa fa-pencil-square-o text-success text-active"></i>
+                                <i style="cursor: pointer;" class="fa fa-pencil-square-o text-success text-active" (click)="showEdit(item.madanhmuc)"></i>
                                 <br>
                                 <i style="cursor: pointer;" (click)="onDelete(item.madanhmuc)" class="fa fa-times text-danger text"></i>
                             </td>

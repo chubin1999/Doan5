@@ -40,9 +40,15 @@ namespace Doan5.BackendServerAPI.Controllers
 
             return danhmucsanpham;
         }
+        [HttpGet("getlistchild/{id}")]
+        public async Task<ActionResult<IEnumerable<Loaisanpham>>> GetLoaisanpham(string id)
+        {
+            return await _context.Loaisanpham.Where(x => x.Madanhmuc == id).ToListAsync(); 
 
+            //return await danhmucsanpham.ToListAsync();
+        }
         // PUT: api/Danhmucsanphams/5
-        
+
         [HttpPut("{id}")]
         public async Task<IActionResult> PutDanhmucsanpham(string id, Danhmucsanpham danhmucsanpham)
         {

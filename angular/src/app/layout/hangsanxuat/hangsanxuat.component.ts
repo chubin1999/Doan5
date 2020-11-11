@@ -3,6 +3,7 @@ import { HangsanxuatService } from '../../shared/services/hangsanxuat.service';
 import { routerTransition } from '../../router.animations';
 import { NgForm } from '@angular/forms';
 import { ModalDirective } from 'ngx-bootstrap/modal';
+
 @Component({
     selector: 'app-hangsanxuat',
     templateUrl: './hangsanxuat.component.html',

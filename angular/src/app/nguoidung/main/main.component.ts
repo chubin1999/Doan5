@@ -1,13 +1,17 @@
 import { AfterViewInit, Component, OnInit, Renderer2 } from '@angular/core';
+import { HangsanxuatService } from '../../shared/services/hangsanxuat.service';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
 })
-export class MainComponent implements OnInit,AfterViewInit {
-  constructor(private renderer: Renderer2) { }
-
+export class MainComponent implements OnInit, AfterViewInit {
+  constructor(private renderer: Renderer2 , private hangsanxuatService: HangsanxuatService) { }
+  public items: any[];
+  public entity: any;
+  public Id: any;
+  
   ngOnInit(): void {
   }
   ngAfterViewInit() { 

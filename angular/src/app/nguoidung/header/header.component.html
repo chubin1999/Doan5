@@ -12,8 +12,7 @@
                 transition: all .3s ease;
                 z-index: 10;">
                     <a routerLink="/main">
-                        <img src="assets/nguoidung/images/BeardClub.png" alt="">
-                        
+                        <img src="assets/nguoidung/images/BeardClub.png" alt=""> 
                     </a>
                 </div>
             </div>
@@ -28,50 +27,22 @@
                                 <li><a href="index-2.html">Home Two</a></li>
                             </ul> -->
                         </li>
-                        <li><a routerLink="/aboutus">ABOUT</a></li>
-                        <li><a href="#">SHOP</a>
+                       
+                        <li><a href="#">PRODUCT</a>
                             <ul class="mega-menu">
-                                <li class="col"><a href="#">Shop Grid Pages</a>
+                                <!-- <li class="col"><a href="#">Shop Grid Pages</a>
+                                   
+                                </li> -->
+                                <li class="col" *ngFor="let menu of menus">
+                                    <a href="#">{{menu.tendanhmuc}}</a>
                                     <ul>
-                                        <li><a href="/danhsachsanpham">Shop Left Sidebar</a></li>
+                                        <li *ngFor="let idex of loai"><a href="#">{{idex.maloai}}</a></li>
                                     </ul>
                                 </li>
-
-                                <li class="col"><a href="#">Shop List Pages</a>
-                                    <ul>
-                                        <li><a href="shop-list.html">Shop List</a></li>
-                                        <li><a href="shop-list-left-sidebar.html">Shop List Left Sidebar</a></li>
-                                        <li><a href="shop-list-right-sidebar.html">Shop List Right Sidebar</a></li>
-                                    </ul>
-                                </li>
-
-                                <li class="col"><a href="#">Product Details Pages</a>
-                                    <ul>
-                                        <li><a href="product-details.html">Product Details Standard</a></li>
-                                        <li><a href="product-details-variable.html">Product Details Variable</a></li>
-                                        <li><a href="product-details-affiliate.html">Product Details Affiliate</a></li>
-                                        <li><a href="product-details-group.html">Product Details Group</a></li>
-                                    </ul>
-                                </li>  
-
-                                <li class="col"><a href="#">Product Details Layout 1</a>
-                                    <ul>
-                                        <li><a href="product-details-bottom-thumbnail.html">Bottom Thumbnail</a></li>
-                                        <li><a href="product-details-left-thumbnail.html">Left Thumbnail</a></li>
-                                        <li><a href="product-details-right-thumbnail.html">Right Thumbnail</a></li>
-                                    </ul>
-                                </li>  
-
-                                <li class="col"><a href="#">Product Details Layout 2</a>
-                                    <ul>
-                                        <li><a href="product-details-left-gallery.html">Left Gallery</a></li>
-                                        <li><a href="product-details-right-gallery.html">Right Gallery</a></li>
-                                        <li><a href="product-details-left-sticky.html">Left Sticky</a></li>
-                                        <li><a href="product-details-right-sticky.html">Right Sticky</a></li>
-                                    </ul>
-                                </li>  
+                                 
                             </ul>
                         </li>
+                        <li><a routerLink="/aboutus">ABOUT</a></li>
                         <li><a href="/blog">BLOG</a>
                             <ul class="sub-menu">
                                 <li><a href="/blog">Blog List</a>

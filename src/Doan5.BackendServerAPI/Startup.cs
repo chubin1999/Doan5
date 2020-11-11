@@ -13,6 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Doan5.BackendServerAPI.Models;
+using Microsoft.OpenApi.Models;
 
 namespace Doan5.BackendServerAPI
 {
@@ -30,6 +31,11 @@ namespace Doan5.BackendServerAPI
         {
             services.AddDbContext<Doan5Context>(op => op.UseSqlServer(Configuration.GetConnectionString("Database")));
             services.AddControllers();
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Knowledge Space API", Version = "v1" });
+            });
 
         }
 
@@ -51,6 +57,13 @@ namespace Doan5.BackendServerAPI
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Knowledge Space API V1");
             });
         }
     }
