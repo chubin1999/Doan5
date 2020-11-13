@@ -1,5 +1,5 @@
 <div [@routerTransition]>
-    <app-page-header [heading]="' Đơn đặt hàng '" [icon]="'fa-table'"></app-page-header>
+    <app-page-header [heading]="' Hóa đơn '" [icon]="'fa-table'"></app-page-header>
     <div class="row">
         <div class="col col-xl-12 col-lg-12">
             <!-- Button to Open the Modal -->
@@ -82,9 +82,9 @@
                             <td>{{item.ngaynhap}}</td>
                             <td>{{item.thanhtien}}</td>
                             <td >
-                                <i style="cursor: pointer;" class="fa fa-pencil-square-o text-success text-active" (click)="showEdit(item.madondathang)"></i>
+                                <i style="cursor: pointer;" class="fa fa-pencil-square-o text-success text-active" (click)="showEdit(item.mahoadon)"></i>
                                 <br>
-                                <i style="cursor: pointer;" (click)="onDelete(item.madondathang)" class="fa fa-times text-danger text"></i>
+                                <i style="cursor: pointer;" (click)="onDelete(item.mahoadon)" class="fa fa-times text-danger text"></i>
                             </td>
                         </tr>
                     </tbody>

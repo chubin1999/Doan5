@@ -27,11 +27,11 @@ export class BinhluanService {
     }));
   }
  //lay theo ma
- getItem(id: string):Observable<any>{
-  return this._http.get<any>(this.urlAPI + "/getlistchild/" + id).pipe(map(res => {
-    return res;
-  }));
-}
+  getItem(id: string):Observable<any>{
+    return this._http.get<any>(this.urlAPI + "/" + id).pipe(map(res => {
+      return res;
+    }));
+  }
 //post
 postItem(data: any): Observable<any> {
   return this._http.post<any>(this.urlAPI, data).pipe(map(res => {

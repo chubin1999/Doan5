@@ -1,5 +1,6 @@
-import { AfterViewInit, Component, OnInit, Renderer2 } from '@angular/core';
-import { HangsanxuatService } from '../../shared/services/hangsanxuat.service';
+import { AfterViewInit, Component, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { ModalDirective } from 'ngx-bootstrap/modal';
+import { SanphamService } from '../../shared/services/sanpham.service';
 
 @Component({
   selector: 'app-main',
@@ -7,14 +8,19 @@ import { HangsanxuatService } from '../../shared/services/hangsanxuat.service';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit, AfterViewInit {
-  constructor(private renderer: Renderer2 , private hangsanxuatService: HangsanxuatService) { }
+  @ViewChild('AddEditModal', { static: false }) AddEditModal: ModalDirective;
+  constructor(private renderer: Renderer2 , private sanphamService: SanphamService) { }
   public items: any[];
-  public entity: any;
-  public Id: any;
-  
   ngOnInit(): void {
+    this.loadData();
   }
-  ngAfterViewInit() { 
+  loadData() {
+    this.sanphamService.getLink().subscribe((res: any) => {
+        this.items = res;
+    });
+}
+
+  ngAfterViewInit() {
     setTimeout(() => {
       this.loadScripts();
     });
@@ -32,5 +38,4 @@ export class MainComponent implements OnInit, AfterViewInit {
     this.renderer.appendChild(document.body, script);
     return script;
   }
-  
 }

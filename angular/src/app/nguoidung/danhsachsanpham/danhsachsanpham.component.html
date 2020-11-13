@@ -53,12 +53,12 @@
                 <div class="shop-product-wrap grid row">
 
                     <!-- Product Item Start -->
-                    <div class="col-xl-4 col-sm-6 col-12 mb-30">
+                    <div class="col-xl-4 col-sm-6 col-12 mb-30" *ngFor="let item of items">
                         <div class="product-item">
                             <!-- Image -->
                             <div class="product-image">
                                 <!-- Image -->
-                                <a routerLink="/chitietsanpham" class="image"><img src="assets/nguoidung/images/product/product-1.jpg" alt=""></a>
+                                <a routerLink="/chitietsanpham" class="image"><img src="../assets/nguoidung/images/sanpham/{{item.hinhanh}}" alt=""></a>
                                 <!-- Product Action -->
                                 <div class="product-action">
                                     <a href="#" class="cart"><span></span></a>
@@ -71,11 +71,11 @@
                                 <div class="head">
                                     <!-- Title-->
                                     <div class="top">
-                                        <h4 class="title"><a href="#">Teritory Quentily</a></h4>
+                                        <h4 class="title"><a href="#">{{item.tensanpham}}</a></h4>
                                     </div>
                                     <!-- Price & Ratting -->
                                     <div class="bottom">
-                                        <span class="price">$35 <span class="old">$65</span></span>
+                                        <span class="price">{{item.dongia}} VNĐ</span>
                                         <span class="ratting">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>

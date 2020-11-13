@@ -98,12 +98,12 @@
             <div class="product-slider product-slider-4 section">
                 
                 <!-- Product Item Start -->
-                <div class="col">
+                <div class="col" *ngFor="let item of items">
                     <div class="product-item">
                         <!-- Image -->
                         <div class="product-image">
                             <!-- Image -->
-                            <a href="product-details-variable.html" class="image"><img src="assets/nguoidung/images/product/product-1.jpg" alt=""></a>
+                            <a href="product-details-variable.html" class="image"><img src="../assets/nguoidung/images/sanpham/{{item.hinhanh}}" alt=""></a>
                             <!-- Product Action -->
                             <div class="product-action">
                                 <a href="#" class="cart"><span></span></a>
@@ -116,159 +116,11 @@
                             <div class="head">
                                 <!-- Title -->
                                 <div class="top">
-                                    <h4 class="title"><a href="#">Teritory Quentily</a></h4>
+                                    <h4 class="title"><a href="#">{{item.tensanpham}}</a></h4>
                                 </div>
                                 <!-- Price & Ratting -->
                                 <div class="bottom">
-                                    <span class="price">$35 <span class="old">$65</span></span>
-                                    <span class="ratting">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- Product Item End -->
-                
-                <!-- Product Item Start -->
-                <div class="col">
-                    <div class="product-item">
-                        <!-- Image -->
-                        <div class="product-image">
-                            <!-- Image -->
-                            <a href="product-details-variable.html" class="image"><img src="assets/nguoidung/images/product/product-2.jpg" alt=""></a>
-                            <!-- Product Action -->
-                            <div class="product-action">
-                                <a href="#" class="cart"><span></span></a>
-                                <a href="#" class="wishlist"><span></span></a>
-                                <a href="#" class="quickview"><span></span></a>
-                            </div>
-                        </div>
-                        <!-- Content -->
-                        <div class="product-content">
-                            <div class="head">
-                                <!-- Title -->
-                                <div class="top">
-                                    <h4 class="title"><a href="#">Adurite Silocone</a></h4>
-                                </div>
-                                <!-- Price & Ratting -->
-                                <div class="bottom">
-                                    <span class="price">$59 <span class="old">$85</span></span>
-                                    <span class="ratting">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half-o"></i>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- Product Item End -->
-                
-                <!-- Product Item Start -->
-                <div class="col">
-                    <div class="product-item">
-                        <!-- Image -->
-                        <div class="product-image">
-                            <!-- Image -->
-                            <a href="product-details-variable.html" class="image"><img src="assets/nguoidung/images/product/product-3.jpg" alt=""></a>
-                            <!-- Product Action -->
-                            <div class="product-action">
-                                <a href="#" class="cart"><span></span></a>
-                                <a href="#" class="wishlist"><span></span></a>
-                                <a href="#" class="quickview"><span></span></a>
-                            </div>
-                        </div>
-                        <!-- Content -->
-                        <div class="product-content">
-                            <div class="head">
-                                <!-- Title -->
-                                <div class="top">
-                                    <h4 class="title"><a href="#">Baizidale Momone</a></h4>
-                                </div>
-                                <!-- Price & Ratting -->
-                                <div class="bottom">
-                                    <span class="price">$78 <span class="old">$99</span></span>
-                                    <span class="ratting">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-o"></i>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- Product Item End -->
-                
-                <!-- Product Item Start -->
-                <div class="col">
-                    <div class="product-item">
-                        <!-- Image -->
-                        <div class="product-image">
-                            <!-- Image -->
-                            <a href="product-details-variable.html" class="image"><img src="assets/nguoidung/images/product/product-4.jpg" alt=""></a>
-                            <!-- Product Action -->
-                            <div class="product-action">
-                                <a href="#" class="cart"><span></span></a>
-                                <a href="#" class="wishlist"><span></span></a>
-                                <a href="#" class="quickview"><span></span></a>
-                            </div>
-                        </div>
-                        <!-- Content -->
-                        <div class="product-content">
-                            <div class="head">
-                                <!-- Title -->
-                                <div class="top">
-                                    <h4 class="title"><a href="#">Makorone Cicile</a></h4>
-                                </div>
-                                <!-- Price & Ratting -->
-                                <div class="bottom">
-                                    <span class="price">$65 <span class="old">$75</span></span>
-                                    <span class="ratting">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half-o"></i>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- Product Item End -->
-                
-                <!-- Product Item Start -->
-                <div class="col">
-                    <div class="product-item">
-                        <!-- Image -->
-                        <div class="product-image">
-                            <!-- Image -->
-                            <a href="product-details-variable.html" class="image"><img src="assets/nguoidung/images/product/product-5.jpg" alt=""></a>
-                            <!-- Product Action -->
-                            <div class="product-action">
-                                <a href="#" class="cart"><span></span></a>
-                                <a href="#" class="wishlist"><span></span></a>
-                                <a href="#" class="quickview"><span></span></a>
-                            </div>
-                        </div>
-                        <!-- Content -->
-                        <div class="product-content">
-                            <div class="head">
-                                <!-- Title -->
-                                <div class="top">
-                                    <h4 class="title"><a href="#">Moisturizing Oil</a></h4>
-                                </div>
-                                <!-- Price & Ratting -->
-                                <div class="bottom">
-                                    <span class="price">$45 <span class="old">$75</span></span>
+                                    <span class="price">{{item.dongia}}  VNĐ</span>
                                     <span class="ratting">
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
@@ -347,12 +199,12 @@
         <div class="row">
 
             <!-- Product Item Start -->
-            <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-30">
+            <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-30" *ngFor="let item of items">
                 <div class="product-item">
                     <!-- Image -->
                     <div class="product-image">
                         <!-- Image -->
-                        <a href="product-details-variable.html" class="image"><img src="assets/nguoidung/images/product/product-5.jpg" alt=""></a>
+                        <a href="product-details-variable.html" class="image"><img src="../assets/nguoidung/images/sanpham/{{item.hinhanh}}" alt=""></a>
                         <!-- Product Action -->
                         <div class="product-action">
                             <a href="#" class="cart"><span></span></a>
@@ -365,11 +217,11 @@
                         <div class="head">
                             <!-- Title -->
                             <div class="top">
-                                <h4 class="title"><a href="#">Moisturizing Oil</a></h4>
+                                <h4 class="title"><a href="#">{{item.tensanpham}}</a></h4>
                             </div>
                             <!-- Price & Ratting -->
                             <div class="bottom">
-                                <span class="price">$45 <span class="old">$75</span></span>
+                                <span class="price">{{item.dongia}} VNĐ</span>
                                 <span class="ratting">
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
@@ -382,266 +234,6 @@
                     </div>
                 </div>
             </div><!-- Product Item End -->
-
-            <!-- Product Item Start -->
-            <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-30">
-                <div class="product-item">
-                    <!-- Image -->
-                    <div class="product-image">
-                        <!-- Image -->
-                        <a href="product-details-variable.html" class="image"><img src="assets/nguoidung/images/product/product-6.jpg" alt=""></a>
-                        <!-- Product Action -->
-                        <div class="product-action">
-                            <a href="#" class="cart"><span></span></a>
-                            <a href="#" class="wishlist"><span></span></a>
-                            <a href="#" class="quickview"><span></span></a>
-                        </div>
-                    </div>
-                    <!-- Content -->
-                    <div class="product-content">
-                        <div class="head">
-                            <!-- Title -->
-                            <div class="top">
-                                <h4 class="title"><a href="#">Katopeno Altuni</a></h4>
-                            </div>
-                            <!-- Price & Ratting -->
-                            <div class="bottom">
-                                <span class="price">$100 <span class="old">$125</span></span>
-                                <span class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-half-o"></i>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- Product Item End -->
-
-            <!-- Product Item Start -->
-            <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-30">
-                <div class="product-item">
-                    <!-- Image -->
-                    <div class="product-image">
-                        <!-- Image -->
-                        <a href="product-details-variable.html" class="image"><img src="assets/nguoidung/images/product/product-7.jpg" alt=""></a>
-                        <!-- Product Action -->
-                        <div class="product-action">
-                            <a href="#" class="cart"><span></span></a>
-                            <a href="#" class="wishlist"><span></span></a>
-                            <a href="#" class="quickview"><span></span></a>
-                        </div>
-                    </div>
-                    <!-- Content -->
-                    <div class="product-content">
-                        <div class="head">
-                            <!-- Title -->
-                            <div class="top">
-                                <h4 class="title"><a href="#">Murikhete Paris</a></h4>
-                            </div>
-                            <!-- Price & Ratting -->
-                            <div class="bottom">
-                                <span class="price">$99 <span class="old">$165</span></span>
-                                <span class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-o"></i>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- Product Item End -->
-
-            <!-- Product Item Start -->
-            <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-30">
-                <div class="product-item">
-                    <!-- Image -->
-                    <div class="product-image">
-                        <!-- Image -->
-                        <a href="product-details-variable.html" class="image"><img src="assets/nguoidung/images/product/product-8.jpg" alt=""></a>
-                        <!-- Product Action -->
-                        <div class="product-action">
-                            <a href="#" class="cart"><span></span></a>
-                            <a href="#" class="wishlist"><span></span></a>
-                            <a href="#" class="quickview"><span></span></a>
-                        </div>
-                    </div>
-                    <!-- Content -->
-                    <div class="product-content">
-                        <div class="head">
-                            <!-- Title -->
-                            <div class="top">
-                                <h4 class="title"><a href="#">Vortahole Valohoi</a></h4>
-                            </div>
-                            <!-- Price & Ratting -->
-                            <div class="bottom">
-                                <span class="price">$92 <span class="old">$110</span></span>
-                                <span class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-half-o"></i>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- Product Item End -->
-
-            <!-- Product Item Start -->
-            <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-30">
-                <div class="product-item">
-                    <!-- Image -->
-                    <div class="product-image">
-                        <!-- Image -->
-                        <a href="product-details-variable.html" class="image"><img src="assets/nguoidung/images/product/product-9.jpg" alt=""></a>
-                        <!-- Product Action -->
-                        <div class="product-action">
-                            <a href="#" class="cart"><span></span></a>
-                            <a href="#" class="wishlist"><span></span></a>
-                            <a href="#" class="quickview"><span></span></a>
-                        </div>
-                    </div>
-                    <!-- Content -->
-                    <div class="product-content">
-                        <div class="head">
-                            <!-- Title -->
-                            <div class="top">
-                                <h4 class="title"><a href="#">Egentry Etumeni</a></h4>
-                            </div>
-                            <!-- Price & Ratting -->
-                            <div class="bottom">
-                                <span class="price">$39 <span class="old">$70</span></span>
-                                <span class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- Product Item End -->
-
-            <!-- Product Item Start -->
-            <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-30">
-                <div class="product-item">
-                    <!-- Image -->
-                    <div class="product-image">
-                        <!-- Image -->
-                        <a href="product-details-variable.html" class="image"><img src="assets/nguoidung/images/product/product-10.jpg" alt=""></a>
-                        <!-- Product Action -->
-                        <div class="product-action">
-                            <a href="#" class="cart"><span></span></a>
-                            <a href="#" class="wishlist"><span></span></a>
-                            <a href="#" class="quickview"><span></span></a>
-                        </div>
-                    </div>
-                    <!-- Content -->
-                    <div class="product-content">
-                        <div class="head">
-                            <!-- Title -->
-                            <div class="top">
-                                <h4 class="title"><a href="#">Origeno Veledita</a></h4>
-                            </div>
-                            <!-- Price & Ratting -->
-                            <div class="bottom">
-                                <span class="price">$110 <span class="old">$139</span></span>
-                                <span class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-half-o"></i>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- Product Item End -->
-
-            <!-- Product Item Start -->
-            <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-30">
-                <div class="product-item">
-                    <!-- Image -->
-                    <div class="product-image">
-                        <!-- Image -->
-                        <a href="product-details-variable.html" class="image"><img src="assets/nguoidung/images/product/product-11.jpg" alt=""></a>
-                        <!-- Product Action -->
-                        <div class="product-action">
-                            <a href="#" class="cart"><span></span></a>
-                            <a href="#" class="wishlist"><span></span></a>
-                            <a href="#" class="quickview"><span></span></a>
-                        </div>
-                    </div>
-                    <!-- Content -->
-                    <div class="product-content">
-                        <div class="head">
-                            <!-- Title -->
-                            <div class="top">
-                                <h4 class="title"><a href="#">Baizidale Momone</a></h4>
-                            </div>
-                            <!-- Price & Ratting -->
-                            <div class="bottom">
-                                <span class="price">$78 <span class="old">$99</span></span>
-                                <span class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-o"></i>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- Product Item End -->
-
-            <!-- Product Item Start -->
-            <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-30">
-                <div class="product-item">
-                    <!-- Image -->
-                    <div class="product-image">
-                        <!-- Image -->
-                        <a href="product-details-variable.html" class="image"><img src="assets/nguoidung/images/product/product-12.jpg" alt=""></a>
-                        <!-- Product Action -->
-                        <div class="product-action">
-                            <a href="#" class="cart"><span></span></a>
-                            <a href="#" class="wishlist"><span></span></a>
-                            <a href="#" class="quickview"><span></span></a>
-                        </div>
-                    </div>
-                    <!-- Content -->
-                    <div class="product-content">
-                        <div class="head">
-                            <!-- Title -->
-                            <div class="top">
-                                <h4 class="title"><a href="#">Buffekete Chai</a></h4>
-                            </div>
-                            <!-- Price & Ratting -->
-                            <div class="bottom">
-                                <span class="price">$82 <span class="old">$105</span></span>
-                                <span class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-half-o"></i>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- Product Item End -->
-            
         </div>
         
     </div>

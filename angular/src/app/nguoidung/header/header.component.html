@@ -28,16 +28,16 @@
                             </ul> -->
                         </li>
                        
-                        <li><a href="#">PRODUCT</a>
+                        <li><a routerLink="/danhsachsanpham">PRODUCT</a>
                             <ul class="mega-menu">
                                 <!-- <li class="col"><a href="#">Shop Grid Pages</a>
                                    
                                 </li> -->
                                 <li class="col" *ngFor="let menu of menus">
-                                    <a href="#">{{menu.tendanhmuc}}</a>
-                                    <ul>
-                                        <li *ngFor="let idex of loai"><a href="#">{{idex.maloai}}</a></li>
-                                    </ul>
+                                    <a routerLink="/danhsachsanpham">{{menu.tendanhmuc}}</a>
+                                    <!-- <ul>
+                                        <li *ngFor="let idex of loai"><a routerLink="/danhsachsanpham">{{idex.maloai}}</a></li>
+                                    </ul> -->
                                 </li>
                                  
                             </ul>
@@ -46,7 +46,6 @@
                         <li><a href="/blog">BLOG</a>
                             <ul class="sub-menu">
                                 <li><a href="/blog">Blog List</a>
-                                    
                                 </li>
                                 <li><a href="/chitietblog">Blog Details</a>
                                 </li>

@@ -27,8 +27,8 @@ export class NhanvienService {
     }));
   }
  //lay theo ma
- getItem(id: string):Observable<any>{
-  return this._http.get<any>(this.urlAPI + "/getlistchild/" + id).pipe(map(res => {
+ getItem(id: string): Observable<any>{
+  return this._http.get<any>(this.urlAPI + "/" + id).pipe(map(res => {
     return res;
   }));
 }
