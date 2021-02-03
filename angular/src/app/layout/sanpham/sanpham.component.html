@@ -4,6 +4,9 @@
         <div class="col col-xl-12 col-lg-12">
             <div class="card-body table-responsive">
 
+                <input style="width:30%" placeholder="Tìm kiếm" type="text" [(ngModel)]="keyword" name="keyword" />
+                <button (click)="Search()">Tìm kiếm</button>
+                            
                  <!-- Form thêm, sửa sản phẩm -->
                <button style="float: right;" type="button" class="btn btn-primary" (click)="showAdd()">
                 <i style="margin: auto;" class="fa fa-plus-square-o" aria-hidden="true"></i>

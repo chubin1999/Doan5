@@ -12,7 +12,7 @@ const routes: Routes = [
             { path: 'blog', loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule) },
             { path: 'checkout', loadChildren: () => import('./checkout/checkout.module').then(m => m.CheckoutModule) },
             { path: 'chitietblog', loadChildren: () => import('./chitietblog/chitietblog.module').then(m => m.ChitietblogModule) },
-            { path: 'chitietsanpham', loadChildren: () => import('./chitietsanpham/chitietsanpham.module').then(m => m.ChitietsanphamModule) },
+            { path: 'chitietsanpham/:id', loadChildren: () => import('./chitietsanpham/chitietsanpham.module').then(m => m.ChitietsanphamModule) },
             { path: 'danhsachsanpham', loadChildren: () => import('./danhsachsanpham/danhsachsanpham.module').then(m => m.DanhsachsanphamModule) },
             { path: 'giohang', loadChildren: () => import('./giohang/giohang.module').then(m => m.GiohangModule) },
             { path: 'lienhe', loadChildren: () => import('./lienhe/lienhe.module').then(m => m.LienheModule) },

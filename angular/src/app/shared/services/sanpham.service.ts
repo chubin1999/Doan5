@@ -47,4 +47,9 @@ export class SanphamService {
       return res;
     }));
   }
+  Search(keyword: string): Observable<any[]> {
+    return this._http.get<any>(this.urlAPI +"/"+ "search" +"/"+ keyword).pipe(map(res => {
+      return res;
+    }));
+  }
 }

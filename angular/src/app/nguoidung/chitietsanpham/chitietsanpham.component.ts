@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-chitietsanpham',
@@ -7,9 +8,14 @@ import { AfterViewInit, Component, OnInit, Renderer2, ViewChild } from '@angular
 })
 export class ChitietsanphamComponent implements OnInit {
 
-  constructor() { }
+  public id: any;
+  constructor(private router: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.router.params.subscribe((params: Params)=>{
+      this.id = params["masanpham"];
+      console.log(this.id);
+    });
   }
 
 }

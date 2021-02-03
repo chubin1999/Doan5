@@ -15,7 +15,8 @@ export class SanphamComponent implements OnInit {
     public items: any[];
     public entity: any;
     public Id: any;
-    constructor(private sanphamService: SanphamService) {}
+    public keyword: string;
+    constructor(public sanphamService: SanphamService) {}
 
     ngOnInit() {
         this.loadData();
@@ -49,7 +50,16 @@ export class SanphamComponent implements OnInit {
             this.items = res;
         });
     }
-
+    laysanphamtheoid(id:string){
+        this.sanphamService.getItem(id).subscribe((res) =>{
+            this.entity =res;
+        });
+    }
+    laysanphamma(){
+        this.sanphamService.getLink().subscribe((res:any)=>{
+            this.items= res;
+        });
+    }
     //su kien them va sua
     onClick(value: any) {
         //neu Id = 0 thi thuc hien them moi
@@ -81,4 +91,12 @@ export class SanphamComponent implements OnInit {
             });
         }
     }
+    Search() {
+        this.sanphamService.Search(this.keyword).subscribe((response: any) => {
+            this. items= response;
+            console.log(response);
+        }, error => {
+            console.log(error);
+        });
+      }
 }

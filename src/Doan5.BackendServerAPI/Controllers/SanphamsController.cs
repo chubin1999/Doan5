@@ -109,7 +109,17 @@ namespace Doan5.BackendServerAPI.Controllers
 
             return sanpham;
         }
+        [HttpGet("{search}/{name?}")]
+        public async Task<IEnumerable<Sanpham>> Search(string name, string news)
+        {
+            IQueryable<Sanpham> query = _context.Sanpham;
+            if (!string.IsNullOrEmpty(name))
+            {
+                query = query.Where(e => e.Tensanpham.Contains(name));
 
+            }
+            return await query.ToListAsync();
+        }
         private bool SanphamExists(string id)
         {
             return _context.Sanpham.Any(e => e.Masanpham == id);
